@@ -33,6 +33,24 @@ FPE algorithms using varying input sizes/presets.
 - JavaScript :)
 - crypto
 
+## Quick Start
+
+```js
+var harpo = require('harpo');
+
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
+
+var cipher = harpo.cipher(key, iv);
+var text = 'sample-text';
+
+// encrypt
+cipher.encrypt(text);
+
+// decrypt
+cipher.decrypt(text);
+```
+
 ## Usage
 
 ### cipher(key, iv, fpe_algorithm, cipher_algorithm, domain_options)
@@ -98,11 +116,10 @@ Initializing a cipher with the default FPE algorithm (prefix-cipher), default en
 and default domain config:
 
 ```js
-var crypto = require('crypto');
 var harpo = require('harpo');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var cipher = harpo.cipher(key, iv);
 ```
@@ -111,10 +128,9 @@ Initializing a cipher with the default FPE algorithm (prefix-cipher), DES encryp
 default domain config:
 
 ```js
-var crypto = require('crypto');
 var harpo = require('harpo');
 
-var key = crypto.randomBytes(4).toString('hex');
+var key = require('crypto').randomBytes(4).toString('hex');
 
 var cipher = harpo.cipher(key, '', 'prefix-cipher', 'des-ecb');
 ```
@@ -123,11 +139,10 @@ Initializing a cipher with the default FPE algorithm (prefix-cipher), default en
 and a custom domain ([A-E]):
 
 ```js
-var crypto = require('crypto');
 var harpo = require('harpo');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var options = {
   type: 'input',
@@ -141,11 +156,10 @@ Initializing a cipher with the default FPE algorithm (prefix-cipher), default en
 and a custom domain ([alphalower] preset) that includes any out-of-domain characters in the input text.
 
 ```js
-var crypto = require('crypto');
 var harpo = require('harpo');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var options = {
   type: 'preset',
@@ -161,11 +175,10 @@ and a custom domain (ascii-ranges of [65-90] and [97-122]) that includes any out
 input text and uses additional symbol characters.
 
 ```js
-var crypto = require('crypto');
 var harpo = require('harpo');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var options = {
   type: 'ascii-range',
@@ -185,11 +198,10 @@ To encrypt and decrypt a string of text using an initialized FPE cipher. **Note*
 used for successful encryption and decryption.
   
 ```js
-var crypto = require('crypto');
 var harpo = require('../lib/core/index');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
     type: 'default',

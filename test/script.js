@@ -1,19 +1,15 @@
-const crypto = require('crypto');
-const harpo = require('../lib/core/index');
+var harpo = require('../lib/core/index');
 
-var key = crypto.randomBytes(16).toString('hex');
-var iv = crypto.randomBytes(8).toString('hex');
+var key = require('crypto').randomBytes(16).toString('hex');
+var iv = require('crypto').randomBytes(8).toString('hex');
 
 var cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
     type: 'default',
     domain: ''
 });
 
-cipher.encrypt('bumblebee');
-// 'ubmuleuee'
-
-cipher.decrypt('ubmuleuee');
-// 'bumblebee'
+console.log(cipher.encrypt('bumblebee'));
+console.log(cipher.decrypt(cipher.encrypt('bumblebee')));
 
 // reinitializing cipher with new domain options
 cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
@@ -22,11 +18,8 @@ cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
     residual_chars: true
 });
 
-cipher.encrypt('TheCowJumpedOverTheMoon');
-// 'OTvpoh0d34v91nvuOTvroo5'
-
-cipher.decrypt('OTvpoh0d34v91nvuOTvroo5');
-// 'TheCowJumpedOverTheMoon'
+console.log(cipher.encrypt('TheCowJumpedOverTheMoon'));
+console.log(cipher.decrypt(cipher.encrypt('TheCowJumpedOverTheMoon')));
 
 // reinitializing cipher with new domain options
 cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
@@ -35,9 +28,7 @@ cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
     additional_chars: [',./defgh']
 });
 
-cipher.encrypt('3314526');
-// '44dh.ec'
+console.log(cipher.encrypt('3314526'));
+console.log(cipher.decrypt(cipher.encrypt('3314526')));
 
-cipher.decrypt('44dh.ec');
-// '3314526'
 
