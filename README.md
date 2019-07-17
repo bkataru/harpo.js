@@ -1,9 +1,11 @@
 # harpo.js
-A comprehensive format-preserving-encryption (FPE) implementation for Node.js
+A comprehensive format-preserving-encryption (FPE) implementation for Node.js.
+Built entirely using ES5 vanilla JavaScript and Node's
+[crypto](https://nodejs.org/api/crypto.html) module.
 
 > An implementation of contemporary format-preserving-encryption algorithms for Node.js environments.
 
-[Format-preserving encryption](https://en.wikipedia.org/wiki/Format-preserving_encryption) is a type of encryption in 
+[Format-preserving-encryption](https://en.wikipedia.org/wiki/Format-preserving_encryption) is a type of encryption in 
 which the format (length, characters, etc) of the output/ciphertext is the same as that of the input.
 
 This library implements FPE algorithms from: 
@@ -11,6 +13,24 @@ This library implements FPE algorithms from:
 This implementation is useful for small domain sizes.
 - A recursive [cycle walking algorithm](https://en.wikipedia.org/wiki/Format-preserving_encryption#FPE_from_cycle_walking).
 - A [Feistel network](https://en.wikipedia.org/wiki/Format-preserving_encryption#FPE_from_a_Feistel_network).
+
+## Changelog
+- v0.1 (alpha) build released.
+- `prefix-cipher` is the only FPE algorithm available.
+- Cipher initialization with custom domain options available.
+- Basic encryption and decryption functions available.
+
+## Further scope
+- Implement robust working versions of the `cycle-walking` and `feistel-network` FPE algorithms.
+- Functionality to compare the performance and time of the 
+FPE algorithms using varying input sizes/presets.
+
+## Dependencies
+- Node.js version 6 and above
+- JavaScript :)
+- crypto
+
+## Installation
 
 ## Usage
 
@@ -228,3 +248,7 @@ harpo.presets();
 //        alphaupper: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 // ...
 ```
+
+## License
+
+MIT © Baalateja Kataru

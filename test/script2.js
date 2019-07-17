@@ -1,13 +1,6 @@
 const crypto = require('crypto');
 const harpo = require('../lib/core/index');
 
-/*
-* 'text': ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '1234567890',
-        ' ', '.', ',', ';', ':', '/', '?', '!', '@', '#', '$', '%', '&', '*', '(', ')', '[', ']', '-', "'", '"'],
-    'jwt': ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '1234567890', '.', '_', '-'],
-    'sha-512': ['abcdef', '0123456789']
-*  */
-
 let key = crypto.randomBytes(16).toString('hex');
 let iv = crypto.randomBytes(8).toString('hex');
 // default: domain of encryption text

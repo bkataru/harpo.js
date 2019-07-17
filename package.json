@@ -1,17 +1,27 @@
 {
   "name": "harpo.js",
   "version": "0.1.0",
-  "description": "",
+  "description": "A comprehensive format-preserving-encryption (FPE) implementation for Node.js environments",
   "main": "./lib/core/index.js",
   "scripts": {
     "test": "node ./test/test.js"
   },
-  "author": "BK-Modding",
-  "license": "ISC",
-  "dependencies": {
-    "base-64": "^0.1.0",
-    "jsonwebtoken": "^8.5.1",
-    "randomstring": "^1.1.5",
-    "request": "^2.88.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BK-Modding/harpo.js.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "author": "BK-Modding <kavesbteja@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BK-Modding/harpo.js/issues"
+  },
+  "homepage": "https://github.com/BK-Modding/harpo.js#readme",
+  "dependencies": {}
 }
