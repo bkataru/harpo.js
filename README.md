@@ -31,7 +31,7 @@ FPE algorithms using varying input sizes/presets.
 - crypto
 
 ## Installation
-
+> npm install harpo
 ## Usage
 
 ### cipher(key, iv, fpe_algorithm, cipher_algorithm, domain_options)

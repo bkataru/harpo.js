@@ -1,5 +1,5 @@
 {
-  "name": "harpo.js",
+  "name": "harpo",
   "version": "0.1.0",
   "description": "A comprehensive format-preserving-encryption (FPE) implementation for Node.js environments",
   "main": "./lib/core/index.js",
