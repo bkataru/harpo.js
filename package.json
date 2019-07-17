@@ -11,10 +11,13 @@
     "url": "git+https://github.com/BK-Modding/harpo.js.git"
   },
   "keywords": [
-    "boilerplate",
-    "npm",
-    "module",
-    "node",
+    "harpo",
+    "crypto",
+    "format-preserving-encryption",
+    "encryption",
+    "cipher",
+    "fpe",
+    "nodejs",
     "javascript"
   ],
   "author": "BK-Modding <kavesbteja@gmail.com>",
