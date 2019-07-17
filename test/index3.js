@@ -13,8 +13,8 @@ let iv = crypto.randomBytes(8).toString('hex');
 // default: domain of encryption text
 // input: provided domain
 var new_options = {
-    type: 'default', // default, input, preset, ascii-range
-    domain: '',
+    type: 'input', // default, input, preset, ascii-range
+    domain: '12345',
     residual_chars: true,
     additional_chars: []
 };
