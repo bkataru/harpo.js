@@ -236,7 +236,7 @@ function test_module(key, iv, fpe_algorithm, cipher_algorithm, domain_options) {
     console.log(test_module(crypto.randomBytes(16).toString('hex'), crypto.randomBytes(8).toString('hex'),
         'prefix-cipher', 'aes-256-cbc', {
             type: 'preset',
-            domain: 'alphanumeric'
+            domain: 'alphalower'
         }));
     console.log();
 
@@ -289,7 +289,7 @@ function test_module(key, iv, fpe_algorithm, cipher_algorithm, domain_options) {
     console.log(test_module(crypto.randomBytes(16).toString('hex'), crypto.randomBytes(8).toString('hex'),
         'prefix-cipher', 'aes-256-cbc', {
             type: 'preset',
-            domain: 'alphanumeric',
+            domain: 'alphalower',
             additional_chars: ['thecowjumpsoverthemoon']
         }));
     console.log();

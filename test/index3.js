@@ -21,7 +21,8 @@ var new_options = {
 
 let cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', new_options);
 
-let text = 'i/am**baala';
+let text = 'BEEBEE';
 console.log(text);
 console.log(cipher.encrypt(text));
 console.log(cipher.decrypt(cipher.encrypt(text)));
+

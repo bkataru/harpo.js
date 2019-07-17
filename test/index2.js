@@ -1,30 +1,46 @@
-const crypto = require('crypto');
+// const crypto = require('crypto');
+// const harpo = require('../lib/core/index');
+//
+// var key = crypto.randomBytes(16).toString('hex');
+// var iv = crypto.randomBytes(8).toString('hex');
+//
+// var cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
+//     type: 'default',
+//     domain: ''
+// });
+//
+// cipher.encrypt('bumblebee');
+// // 'ubmuleuee'
+//
+// cipher.decrypt('ubmuleuee');
+// // 'bumblebee'
+//
+// // reinitializing cipher with new domain options
+// cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
+//     type: 'preset',
+//     domain: 'numeric',
+//     residual_chars: true
+// });
+//
+// cipher.encrypt('TheCowJumpedOverTheMoon');
+// // 'OTvpoh0d34v91nvuOTvroo5'
+//
+// cipher.decrypt('OTvpoh0d34v91nvuOTvroo5');
+// // 'TheCowJumpedOverTheMoon'
+//
+// // reinitializing cipher with new domain options
+// cipher = harpo.cipher(key, iv, 'prefix-cipher', 'aes-256-cbc', {
+//     type: 'input',
+//     domain: '123456abcdef',
+//     additional_chars: [',./defgh']
+// });
+//
+// cipher.encrypt('3314526');
+// // '44dh.ec'
+//
+// cipher.decrypt('44dh.ec');
+// // '3314526'
 
-let key = crypto.randomBytes(16).toString('hex');
-let iv = crypto.randomBytes(8).toString('hex');
+var harpo = require('../lib/core/index');
 
-function char_encrypt(char) {
-    const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
-    let crypted = cipher.update(char, 'utf8', 'hex');
-    crypted += cipher.final('hex');
-    return crypted;
-}
-
-console.log(char_encrypt('d'));
-
-let domain = 'abcdefghijklmo'.split('');
-let sorted = domain
-    .map(function (char) { return char; })
-    .sort(function(char1, char2) { return char_encrypt(char1).localeCompare(char_encrypt(char2)); });
-
-var encrypted_table = {};
-var decrypted_table = {};
-
-for(var i = 0; i < domain.length; i++)
-{
-    encrypted_table[domain[i]] = sorted[i];
-    decrypted_table[sorted[i]] = domain[i];
-}
-
-console.log(encrypted_table);
-console.log(decrypted_table);
+console.log(harpo.presets());
