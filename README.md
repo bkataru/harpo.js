@@ -1,4 +1,7 @@
 # harpo.js
+
+[![NPM](https://nodei.co/npm/harpo.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/harpo/)
+
 A comprehensive format-preserving-encryption (FPE) implementation for Node.js.
 Built entirely using ES5 vanilla JavaScript and Node's
 [crypto](https://nodejs.org/api/crypto.html) module.
@@ -30,8 +33,6 @@ FPE algorithms using varying input sizes/presets.
 - JavaScript :)
 - crypto
 
-## Installation
-> npm install harpo
 ## Usage
 
 ### cipher(key, iv, fpe_algorithm, cipher_algorithm, domain_options)
