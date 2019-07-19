@@ -18,7 +18,8 @@ This implementation is useful for small domain sizes.
 - A [Feistel network](https://en.wikipedia.org/wiki/Format-preserving_encryption#FPE_from_a_Feistel_network).
 
 ## Changelog
-- v0.1 (alpha) build released.
+### v0.1 (alpha)
+- Alpha build released
 - `prefix-cipher` is the only FPE algorithm available.
 - Cipher initialization with custom domain options available.
 - Basic encryption and decryption functions available.
@@ -29,8 +30,8 @@ This implementation is useful for small domain sizes.
 FPE algorithms using varying input sizes/presets.
 
 ## Dependencies
-- Node.js version 6 and above
 - JavaScript :)
+- Node.js version 6 and above
 - crypto
 
 ## Quick Start
