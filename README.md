@@ -199,7 +199,7 @@ To encrypt and decrypt a string of text using an initialized FPE cipher. **Note*
 used for successful encryption and decryption.
   
 ```js
-var harpo = require('../lib/core/index');
+var harpo = require('harpo');
 
 var key = require('crypto').randomBytes(16).toString('hex');
 var iv = require('crypto').randomBytes(8).toString('hex');
@@ -249,7 +249,7 @@ cipher.decrypt('44dh.ec');
 To obtain a list of domain presets of each FPE algorithm.
 
 ```js
-var harpo = require('../lib/core/index');
+var harpo = require('harpo');
 
 harpo.presets();
 // prefix-cipher:
